@@ -5,10 +5,10 @@ package com.krieg;
  */
 import java.sql.*;
 public class DBBean {
-    private String driverStr = "com.my";
-    private String connStr = "jdbc:sqlserver://localhost:1433; DatabaseName=JXP";
-    private String dbusername = "sa";
-    private String dbpassword = "123456";
+    private String driverStr = "com.mysql.jdbc.Driver";//数据库驱动
+    private String connStr = "jdbc:mysql://localhost:3306/test";//数据库地址
+    private String dbusername = "root";//数据库用户名
+    private String dbpassword = "123456";//数据库密码
     private Connection conn = null;
     private Statement stmt = null;
 
@@ -21,7 +21,7 @@ public class DBBean {
             stmt = conn.createStatement();
         }
         catch (Exception ex) {
-            System.out.println("数据连接失败！");
+            System.out.println("数据库连接失败！");
         }
 
     }
