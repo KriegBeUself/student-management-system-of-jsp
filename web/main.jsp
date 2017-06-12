@@ -12,7 +12,7 @@
 </head>
 <body>
 <center>
-    <a href="display.jsp" >显示数据库所有学生信息</a>
+    <a href="display.jsp" >查看数据库所有学生信息</a>
     <br>
     <a href="add.jsp" >增加学生信息</a>
     <br>
@@ -20,7 +20,7 @@
     <br>
     <a href="search.jsp" >查找学生信息</a>
     <br>
-    <a href="change.jsp" >修改学生信息</a>
+    <a href="update.jsp" >修改学生信息</a>
 </center>
 </body>
 </html>

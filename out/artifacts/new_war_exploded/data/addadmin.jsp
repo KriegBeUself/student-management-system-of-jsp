@@ -5,8 +5,8 @@
   Time: 19:41
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" import="java.sql.*" %>
-<%@ page import="javax.swing.*" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html>
 <head>
     <title>Title</title>
@@ -20,9 +20,12 @@
     //下面是数据库操作
     String sql="insert into admin values("+"'"+username+"','"+password+"')";//定义一个查询语句
     int rs=db.executeUpdate(sql);//运行上面的语句
-    if(rs==1 )
-    {
-        out.print("<script language");
+    if(rs==1)
+    { %>
+<script language='javascript' type='text/javascript'>
+    alert("注册成功！");</script>
+<%
+        response.setHeader("refresh","0;url=../index.jsp");
     }
 %>
 

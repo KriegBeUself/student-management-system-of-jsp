@@ -1,36 +1,48 @@
-<%--
+<%@ page import="java.sql.ResultSet" %><%--
   Created by IntelliJ IDEA.
   User: Krieg
-  Date: 2017/6/10
-  Time: 17:12
+  Date: 2017/6/12
+  Time: 9:18
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  %>
 <html>
 <head>
-    <title>增加学生信息</title>
+    <title>更新学生信息</title>
 </head>
 <body>
+<jsp:useBean id="db" class="com.krieg.DBBean" scope="page" />
+<%
+    request.setCharacterEncoding("gb2312");
+    String name=request.getParameter("content");
+    String sql = "SELECT * FROM student WHERE stu_id ='"+name+"'or name='"+name+"'" ;
+    ResultSet rs = db.executeQuery(sql);
+%>
 <center>
+        <%
+        while (rs.next()) {
+    %>
+    <tr>
+        <td>
+            学号：
+            <br>
+        </td>
+        <td>
+            <%
+                out.print(rs.getString(1));
+            %>
+            <br>
+        </td>
+    </tr>
     <form id="inform" name="inform" action="data/addinfo.jsp" method="post">
         <table border="0">
-            <tr>
-                <td>
-                    学号：
-                    <br>
-                </td>
-                <td>
-                    <input type="text" name="num">
-                    <br>
-                </td>
-            </tr>
             <tr>
                 <td>
                     姓名：
                     <br>
                 </td>
                 <td>
-                    <input type="text" name="name">
+                    <input type="text"  name="name" value="<%out.print(rs.getString(2));%>">
                     <br>
                 </td>
             </tr>
@@ -40,8 +52,10 @@
                     <br>
                 </td>
                 <td>
-                    <input type=radio name=sex value="男" checked>男
-                    <input type=radio name=sex value="女">女
+                    <select id="sex" name="sex">
+                        <option value="男">男</option>
+                        <option value="女">女</option>
+                    </select>
                     <br>
                 </td>
             </tr>
@@ -106,13 +120,12 @@
                 </td>
             </tr>
         </table>
+        <%
+            }
+        %>
         <input type="submit" value="添加">    &nbsp;&nbsp;&nbsp;
         <a href="main.jsp"><input type="button" value="返回"></a>
     </form>
-
-
-
-</center>
 
 </body>
 </html>
