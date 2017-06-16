@@ -1,4 +1,4 @@
-<%--
+﻿<%--
   Created by IntelliJ IDEA.
   User: Krieg
   Date: 2017/6/10
@@ -26,7 +26,7 @@
     String jiguan=request.getParameter("address");
     String temp= request.getHeader("referer");
 
-    if (temp.equals("http://localhost:8080/data/updatedis.jsp"))
+    if (temp.equals("http://localhost/data/updatedis.jsp"))
     {
         System.out.println("从修改信息界面跳转而来，执行update操作");
         String sql="update student set name='"+name+"',sex='"+sex+"',birth='"+year+"-"+month+"-"+day+"',entrance_date='"+enter_year+"',zhuanye='"+zhuanye+"',xueyuan='"+xueyuan+"',address='"+jiguan+"' WHERE stu_id='"+num+"';";//定义一个查询语句

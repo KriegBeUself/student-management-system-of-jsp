@@ -45,7 +45,7 @@
         if (rs==1)
         {
             out.print("<script language='javascript' type='text/javascript'>alert(\"添加学生信息成功！\");</script>");
-            response.setHeader("refresh","0;url=../main.jsp");
+            response.setHeader("refresh","0;url=../update.jsp");
         }
     }
 

@@ -14,7 +14,7 @@
 
 <jsp:useBean id="db" class="com.krieg.DBBean" scope="page" />
 <%
-    request.setCharacterEncoding("gb2312");
+    request.setCharacterEncoding("UTF-8");
     String name=request.getParameter("content");
     String sql = "SELECT * FROM student WHERE stu_id ='"+name+"'or name='"+name+"'" ;
     ResultSet rs = db.executeQuery(sql);

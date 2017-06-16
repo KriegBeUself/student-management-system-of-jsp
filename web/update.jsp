@@ -17,9 +17,9 @@
         <br>
         <br>
         <%--<a href="javascript:if(confirm('确定要删除该同学的信息吗？'))location='deletedis.jsp'">--%>
-        <input type="submit" value="删除" >&nbsp;&nbsp;&nbsp;
+        <input type="submit" value="更改" >&nbsp;&nbsp;&nbsp;
         <a href="main.jsp"><input type="button" value="返回"></a>
-        <p>*:请输入学生学号进行删除操作</p>
+        <p>*:请输入学号修改个人资料</p>
     </center>
 </form>
 </body>
